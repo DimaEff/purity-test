@@ -1,0 +1,11 @@
+.gradient-text {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #9d1aaa 33%, #d3c111 66%, #4bf300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+    display: table;
+    margin: 20px auto;
+}
