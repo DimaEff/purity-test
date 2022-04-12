@@ -1,4 +1,4 @@
-import React, { Dispatch, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
 
 import "./index.css";

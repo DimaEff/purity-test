@@ -3,7 +3,7 @@ import Brightness5Icon from '@mui/icons-material/Brightness5';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 import { ChangePaletteModeContext } from "../../App";
-import { Box, Button, colors, IconButton, useTheme } from "@mui/material";
+import { Box, colors, IconButton, useTheme } from "@mui/material";
 
 
 const ChangeMode = () => {
