@@ -23,6 +23,8 @@ function App() {
         localStorage.setItem("mode", mode);
     }
     const t = useTheme();
+    // dependencies not needed t
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const theme = React.useMemo(() => getTheme(mode, t), [mode]);
 
     return (
