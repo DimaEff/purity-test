@@ -1,18 +1,40 @@
-import React from 'react';
-import "./joke.css";
+import React, { Dispatch, Suspense } from 'react';
+import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
+
+import "./index.css";
+import { getTheme } from "./muiStyles";
+import { AppContent } from "./components/common";
+import Header from "./components/header";
+
+
+interface ChangePaletteMode {
+    handleChangeMode: (mode: PaletteMode) => void;
+}
+
+export const ChangePaletteModeContext = React.createContext<ChangePaletteMode>({
+    handleChangeMode: (mode: PaletteMode) => {},
+});
 
 function App() {
+    // theming
+    const [mode, setMode] = React.useState<PaletteMode>(localStorage.getItem("mode") === "light" ? 'light' : "dark");
+    const handleChangeMode = (mode: PaletteMode) => {
+        setMode(mode);
+        localStorage.setItem("mode", mode);
+    }
+    const t = useTheme();
+    const theme = React.useMemo(() => getTheme(mode, t), [mode]);
+
     return (
-        <div>
-            <h1 className={"gradient-text"}>Асечка - самая лучшая девочка на свете!!!!!!!</h1>
-            <h1 className={"gradient-text"}>Я очень очень в нее влюблен!!!!</h1>
-            <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <video style={{ height: 500, width: 250}} controls>
-                    <source src={require("./v.mp4")} type="video/mp4"/>
-                </video>
-            </div>
-            <h1 className={"gradient-text"}>Анекдот! Иногда я использую слова, значений которых не знаю, чтобы люди видели, какой я эрегированный.</h1>
-        </div>
+        <Suspense fallback={<div>loader</div>}>
+            <ChangePaletteModeContext.Provider value={{handleChangeMode}}>
+                <ThemeProvider theme={theme}>
+                    <AppContent>
+                        <Header />
+                    </AppContent>
+                </ThemeProvider>
+            </ChangePaletteModeContext.Provider>
+        </Suspense>
     );
 }
 

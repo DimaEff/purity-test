@@ -1,0 +1,10 @@
+{
+  "test": "test",
+  "questions": [
+
+  ],
+  "hashRoutes": {
+    "faq": "FAQ",
+    "scoreMeaning": "Score Meaning"
+  }
+}
