@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from "@mui/material";
 
 import { BACKGROUND_COLOR_DARK, BACKGROUND_COLOR_LIGHT } from "../../consts/theme";
-import { APP_SCROLLER_WRAPPER_ID } from "../../consts/routes";
+import { APP_SCROLLER_WRAPPER_ID } from "../../consts/route";
 
 
 const AppWrapper: React.FC = ({children}) => {

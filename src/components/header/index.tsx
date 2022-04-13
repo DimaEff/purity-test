@@ -1,15 +1,18 @@
 import React from 'react';
 import { Box, Paper, Stack } from "@mui/material";
 
+import desktopLogo from "../../assets/purity-logo.svg";
+import mobileLogo from "../../assets/purity-icon.svg";
 import { useBreakpoints } from "../../hooks";
 import LanguageSelect from "./LanguageSelect";
 import ChangeMode from "./ChangeMode";
-import Navigation from "./Navigation";
-import { useTranslation } from "react-i18next";
+import MobileNavigation from "./navigation/MobileNavigation";
+import DesktopNavigation from "./navigation/DesktopNavigation";
+import Logo from "./Logo";
 
 
 const HeaderComponent = () => {
-    const { t } = useTranslation();
+    const {isMobile} = useBreakpoints();
 
     return (
         <Paper
@@ -25,12 +28,13 @@ const HeaderComponent = () => {
             })}
         >
             <Box>
-                {t("test")}
+                <Logo src={desktopLogo}/>
             </Box>
             <Stack direction={"row"} spacing={1}>
-                <Navigation />
-                <ChangeMode />
-                <LanguageSelect />
+                {isMobile || <DesktopNavigation/>}
+                {/*<LanguageSelect/>*/}
+                <ChangeMode/>
+                {isMobile && <MobileNavigation/>}
             </Stack>
         </Paper>
     );

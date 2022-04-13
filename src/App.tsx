@@ -12,7 +12,6 @@ import Header from "./components/header";
 interface ChangePaletteMode {
     handleChangeMode: (mode: PaletteMode) => void;
 }
-
 export const ChangePaletteModeContext = React.createContext<ChangePaletteMode>({
     handleChangeMode: (mode: PaletteMode) => {
     },

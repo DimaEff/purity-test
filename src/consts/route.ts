@@ -6,4 +6,4 @@ export const routes: any = {
     faq: "faq",
     scoreMeaning: "scoreMeaning",
 };
-export type Routes = keyof typeof routes;
+export type Route = keyof typeof routes;

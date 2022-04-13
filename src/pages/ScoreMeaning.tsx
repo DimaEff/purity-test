@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper } from "@mui/material";
 import { Element } from "react-scroll";
 
-import { routes } from "../consts/routes";
+import { routes } from "../consts/route";
 
 
 const ScoreMeaning = () => {
