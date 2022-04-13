@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, Paper, Stack } from "@mui/material";
 
 import desktopLogo from "../../assets/purity-logo.svg";
-import mobileLogo from "../../assets/purity-icon.svg";
 import { useBreakpoints } from "../../hooks";
-import LanguageSelect from "./LanguageSelect";
+// import LanguageSelect from "./LanguageSelect";
 import ChangeMode from "./ChangeMode";
 import MobileNavigation from "./navigation/MobileNavigation";
 import DesktopNavigation from "./navigation/DesktopNavigation";
