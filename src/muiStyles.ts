@@ -10,7 +10,7 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
             dark: colors.blue[800],
         },
         success: {
-            main: colors.lightGreen["700"],
+            main: "#53c318",
         },
     },
     components: {
@@ -36,13 +36,20 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
         MuiButton: {
             defaultProps: {
                 disableElevation: true,
+                focusRipple: false,
             },
             styleOverrides: {
                 root: {
                     borderRadius: BORDER_RADIUS1,
-                    padding: theme.spacing(1),
                     minWidth: theme.spacing(0),
                     textTransform: "none",
+                    minHeight: theme.spacing(5),
+                },
+                containedPrimary: {
+                    backgroundColor: theme.palette.mode === "dark" ? colors.blue[800] : theme.palette.primary.main,
+                },
+                outlined: {
+                    padding: theme.spacing(1),
                 },
             }
         },

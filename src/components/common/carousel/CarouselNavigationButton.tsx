@@ -1,17 +1,22 @@
 import React, { useMemo } from 'react';
-import { Button } from "@mui/material";
+import { Button, colors, SxProps, Theme, Typography } from "@mui/material";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import { useTranslation } from "react-i18next";
+
 import { Localization } from "./localization";
 
 
 type CarouselNavigationButtonType = "next" | "prev" | "success";
 type ButtonValues = { [key in CarouselNavigationButtonType]: string};
 
+const iconStyle: SxProps<Theme> = (theme) => ({
+    color: theme.palette.mode === "dark" ? "white" : colors.grey[700],
+});
+
 const valuesIcons: {[key: string]: React.ReactComponentElement<any>} = {
-    "<": <ArrowBackIosRoundedIcon sx={{margin: 0}}/>,
-    ">": <ArrowForwardIosRoundedIcon />,
+    "<": <ArrowBackIosRoundedIcon fontSize={"small"} sx={iconStyle}/>,
+    ">": <ArrowForwardIosRoundedIcon sx={iconStyle}/>,
 };
 
 interface CarouselNavigationButtonProps {
@@ -38,7 +43,7 @@ const CarouselNavigationButton: React.FC<CarouselNavigationButtonProps> = ({type
             variant={variant}
             onClick={onClick}
         >
-            {Icon || value}
+            {Icon || <Typography variant={"subtitle2"}>{value}</Typography>}
         </Button>
     );
 };
