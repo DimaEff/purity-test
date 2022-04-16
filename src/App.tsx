@@ -7,13 +7,14 @@ import { AppContent, AppWrapper } from "./components/common";
 import Faq from "./pages/Faq";
 import ScoreMeaning from "./pages/ScoreMeaning";
 import Header from "./components/header";
+import PurityTest from "./pages/PurityTest";
 
 
 interface ChangePaletteMode {
     handleChangeMode: (mode: PaletteMode) => void;
 }
 export const ChangePaletteModeContext = React.createContext<ChangePaletteMode>({
-    handleChangeMode: (mode: PaletteMode) => {
+    handleChangeMode: () => {
     },
 });
 
@@ -38,6 +39,7 @@ function App() {
                 <AppWrapper>
                     <Header/>
                     <AppContent>
+                        <PurityTest />
                         <Faq/>
                         <ScoreMeaning/>
                     </AppContent>

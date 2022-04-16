@@ -1,9 +1,18 @@
-import { createTheme, PaletteMode, Theme } from "@mui/material";
+import { colors, createTheme, PaletteMode, Theme } from "@mui/material";
 
-import { BORDER_RADIUS } from "./consts/theme";
+import { BORDER_RADIUS1, BORDER_RADIUS2 } from "./consts/theme";
 
 export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
-    palette: { mode },
+    palette: {
+        mode,
+        primary: {
+            main: mode === "light" ? colors.blue[500]: colors.blue[700],
+            dark: colors.blue[800],
+        },
+        success: {
+            main: colors.lightGreen["700"],
+        },
+    },
     components: {
         MuiPaper: {
             defaultProps: {
@@ -11,7 +20,7 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
             },
             styleOverrides: {
                 root: {
-                    borderRadius: BORDER_RADIUS,
+                    borderRadius: BORDER_RADIUS2,
                     padding: theme.spacing(2),
                 },
             },
@@ -23,6 +32,27 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
                     outline: "none",
                 }
             }
-        }
+        },
+        MuiButton: {
+            defaultProps: {
+                disableElevation: true,
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: BORDER_RADIUS1,
+                    padding: theme.spacing(1),
+                    minWidth: theme.spacing(0),
+                    textTransform: "none",
+                },
+            }
+        },
+        MuiIcon: {
+            styleOverrides: {
+                root: {
+                    margin: theme.spacing(0),
+                    padding: theme.spacing(0),
+                }
+            }
+        },
     },
 });

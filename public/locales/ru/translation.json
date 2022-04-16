@@ -1,9 +1,17 @@
 {
-  "test": "тест",
-  "_comment_question": "Вопросы, кторые будут отображаться",
-  "questions": [
+  "_comment_test": "Все, что связано непосредственно с тестом",
+  "purityTest": {
+    "_comment_questions": "Все отображаемые вопросы",
+    "questions": [],
 
-  ],
+    "_comment_buttons": "Кнопки управления тестом",
+    "navigationButtons": {
+      "next": "ДАЛЕЕ",
+      "prev": "<",
+      "success": "РЕЗУЛЬТАТ"
+    }
+  },
+
   "_comment_routes": "Эти значения соответствуют ссылкам в хэдере",
   "hashRoutes": {
     "faq": "FAQ",
