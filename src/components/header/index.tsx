@@ -20,8 +20,6 @@ const HeaderComponent = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                width: "100%",
-                maxWidth: "100%",
                 height: theme.spacing(5),
             })}
         >
@@ -42,20 +40,19 @@ const Header = () => {
     const {isMobile} = useBreakpoints();
 
     return (
-        <Container
-            maxWidth={"md"}
-            sx={theme => ({
+        <Box
+            sx={theme =>( {
                 zIndex: theme.zIndex.modal,
                 position: "fixed",
                 [isMobile ? "bottom" : "top"]: 0,
-                display: "flex",
-                justifyContent: "center",
                 width: "100%",
-                padding: 2,
+                padding: theme.spacing(2, 0),
             })}
         >
-            <HeaderComponent/>
-        </Container>
+            <Container maxWidth={"md"}>
+                <HeaderComponent/>
+            </Container>
+        </Box>
     )
 }
 
