@@ -23,7 +23,7 @@ const HeaderComponent = () => {
                 width: "100%",
                 maxWidth: theme.spacing(90),
                 height: theme.spacing(5),
-                margin: theme.spacing(2, 1),
+                margin: theme.spacing(2, 2),
             })}
         >
             <Box>

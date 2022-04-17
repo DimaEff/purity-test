@@ -8,7 +8,7 @@ const PurityTest = () => {
 
     return (
         <Paper>
-            <Carousel width={300} height={150}>
+            <Carousel width={"100%"} height={150}>
                 {test.map(te => <Typography key={te}>{te}</Typography>)}
             </Carousel>
         </Paper>

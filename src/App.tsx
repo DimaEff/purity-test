@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
 
 import "./index.css";
-import { getTheme } from "./muiStyles";
+import { getTheme } from "./muiTheme";
 import { AppContent, AppWrapper } from "./components/common";
-import Faq from "./pages/Faq";
-import ScoreMeaning from "./pages/ScoreMeaning";
 import Header from "./components/header";
 import PurityTest from "./pages/PurityTest";
 
@@ -13,6 +11,7 @@ import PurityTest from "./pages/PurityTest";
 interface ChangePaletteMode {
     handleChangeMode: (mode: PaletteMode) => void;
 }
+
 export const ChangePaletteModeContext = React.createContext<ChangePaletteMode>({
     handleChangeMode: () => {
     },
@@ -39,9 +38,7 @@ function App() {
                 <AppWrapper>
                     <Header/>
                     <AppContent>
-                        <PurityTest />
-                        <Faq/>
-                        <ScoreMeaning/>
+                        <PurityTest/>
                     </AppContent>
                 </AppWrapper>
             </ThemeProvider>

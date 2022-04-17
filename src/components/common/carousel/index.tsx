@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { Box, SxProps } from "@mui/material";
 import Slider from "react-slick";
 
-import NavigationCarousel from "./Navigation";
+import Navigation, { NavigationProps } from "./Navigation";
 
 
 interface CarouselProps {
@@ -10,6 +10,8 @@ interface CarouselProps {
     height: string | number;
     sx?: SxProps;
     keys?: (string | number)[];
+    onSuccess?: () => void;
+    CustomNavigation?: React.FC<NavigationProps>;
 }
 
 const Carousel: React.FC<CarouselProps> = (
@@ -19,6 +21,8 @@ const Carousel: React.FC<CarouselProps> = (
         height,
         sx,
         keys,
+        onSuccess,
+        CustomNavigation,
     }
 ) => {
     const childrenArray = React.Children.toArray(children);
@@ -79,12 +83,11 @@ const Carousel: React.FC<CarouselProps> = (
                 >
                 </Box>
             </Slider>
-            <NavigationCarousel
-                slider={slider}
-                isNext={isNext}
-                isPrev={isPrev}
-                onSuccess={() => console.log("success")}
-            />
+            {
+                CustomNavigation ?
+                    <CustomNavigation slider={slider} isPrev={isPrev} isNext={isNext} onSuccess={onSuccess}/> :
+                    <Navigation slider={slider} isPrev={isPrev} isNext={isNext} onSuccess={onSuccess}/>
+            }
         </Box>
     );
 };

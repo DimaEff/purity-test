@@ -4,6 +4,8 @@ import { blueGrey, grey } from "@mui/material/colors";
 
 const theme = createTheme();
 
+export const MAX_CONTENT_WIDTH = theme.spacing(90);
+
 export const BORDER_RADIUS1 = theme.spacing(1);
 export const BORDER_RADIUS2 = theme.spacing(2);
 

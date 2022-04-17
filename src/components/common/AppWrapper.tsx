@@ -14,8 +14,8 @@ const AppWrapper: React.FC = ({children}) => {
                 display: "flex",
                 justifyContent: "center",
                 padding: theme.spacing(0, 2, 0, 2),
-                height: "100%",
                 minHeight: "100vh",
+                maxWidth: "100vw",
                 backgroundColor: theme.palette.mode === "light" ? BACKGROUND_COLOR_LIGHT : BACKGROUND_COLOR_DARK,
             })}
         >

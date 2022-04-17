@@ -5,11 +5,11 @@ import CarouselNavigationButton from "./CarouselNavigationButton";
 import Slider from "react-slick";
 
 
-interface NavigationProps {
+export interface NavigationProps {
     slider: React.RefObject<Slider | null>;
     isPrev: boolean;
     isNext: boolean;
-    onSuccess: () => void;
+    onSuccess?: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({slider, isPrev, isNext, onSuccess}) => {
@@ -24,13 +24,16 @@ const Navigation: React.FC<NavigationProps> = ({slider, isPrev, isNext, onSucces
     }
 
     const handleSuccess = () => {
-        onSuccess();
+        onSuccess && onSuccess();
     }
 
     return (
         <ButtonStack justifyContent={"flex-end"}>
             {isPrev && <CarouselNavigationButton onClick={handlePrev} type={"prev"}/>}
-            <CarouselNavigationButton onClick={isNext ? handleNext : handleSuccess} type={isNext ? "next" : "success"}/>
+            <CarouselNavigationButton
+                onClick={isNext ? handleNext : handleSuccess}
+                type={(!isNext && onSuccess) ? "success" : "next"}
+            />
         </ButtonStack>
     );
 };

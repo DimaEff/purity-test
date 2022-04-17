@@ -13,6 +13,15 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
             main: "#53c318",
         },
     },
+    typography: {
+        fontFamily: [
+            "Montserrat",
+            "sans-serif",
+        ].join(","),
+        allVariants: {
+            color: mode === "light" ? theme.palette.text.primary : colors.grey[400],
+        }
+    },
     components: {
         MuiPaper: {
             defaultProps: {
