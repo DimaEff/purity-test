@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Paper, Stack } from "@mui/material";
+import { Box, Container, Paper, Stack } from "@mui/material";
 
 import desktopLogo from "../../assets/purity-logo.svg";
 import { useBreakpoints } from "../../hooks";
@@ -21,9 +21,8 @@ const HeaderComponent = () => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 width: "100%",
-                maxWidth: theme.spacing(90),
+                maxWidth: "100%",
                 height: theme.spacing(5),
-                margin: theme.spacing(2, 1),
             })}
         >
             <Box>
@@ -43,19 +42,20 @@ const Header = () => {
     const {isMobile} = useBreakpoints();
 
     return (
-        <Box
-            sx={(theme) => ({
+        <Container
+            maxWidth={"md"}
+            sx={theme => ({
                 zIndex: theme.zIndex.modal,
                 position: "fixed",
                 [isMobile ? "bottom" : "top"]: 0,
                 display: "flex",
                 justifyContent: "center",
                 width: "100%",
-                maxWidth: 800,
+                padding: 2,
             })}
         >
             <HeaderComponent/>
-        </Box>
+        </Container>
     )
 }
 

@@ -8,6 +8,7 @@ import Faq from "./pages/Faq";
 import ScoreMeaning from "./pages/ScoreMeaning";
 import Header from "./components/header";
 import PurityTest from "./pages/PurityTest";
+import Carousel from "./components/common/carousel";
 
 
 interface ChangePaletteMode {
@@ -36,12 +37,10 @@ function App() {
     return (
         <ChangePaletteModeContext.Provider value={{handleChangeMode}}>
             <ThemeProvider theme={theme}>
+                <Header/>
                 <AppWrapper>
-                    <Header/>
                     <AppContent>
-                        <PurityTest />
-                        <Faq/>
-                        <ScoreMeaning/>
+                        <Carousel width={"100%"} height={300}/>
                     </AppContent>
                 </AppWrapper>
             </ThemeProvider>
