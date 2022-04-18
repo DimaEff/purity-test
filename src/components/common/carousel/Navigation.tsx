@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSwiper } from "swiper/react";
-
-import ButtonStack from "../ButtonStack";
+import { Box } from "@mui/material";
 
 
 interface NavigationProps {
@@ -11,10 +10,10 @@ const Navigation: React.FC<NavigationProps> = () => {
     const swiper = useSwiper();
 
     return (
-        <ButtonStack zIndex={50} justifyContent={"flex-end"}>
+        <Box sx={{zIndex: 123123}}>
             <button onClick={() => swiper.slidePrev()}>{"<"}</button>
             <button onClick={() => swiper.slideNext()}>{">"}</button>
-        </ButtonStack>
+        </Box>
     );
 };
 

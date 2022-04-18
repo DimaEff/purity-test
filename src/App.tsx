@@ -4,16 +4,14 @@ import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
 import "./index.css";
 import { getTheme } from "./muiStyles";
 import { AppContent, AppWrapper } from "./components/common";
-import Faq from "./pages/Faq";
-import ScoreMeaning from "./pages/ScoreMeaning";
 import Header from "./components/header";
-import PurityTest from "./pages/PurityTest";
-import Carousel from "./components/common/carousel";
+import PurityTest from "./pages/purityTest";
 
 
 interface ChangePaletteMode {
     handleChangeMode: (mode: PaletteMode) => void;
 }
+
 export const ChangePaletteModeContext = React.createContext<ChangePaletteMode>({
     handleChangeMode: () => {
     },
@@ -40,7 +38,7 @@ function App() {
                 <Header/>
                 <AppWrapper>
                     <AppContent>
-                        <Carousel width={"100%"} height={300}/>
+                        <PurityTest/>
                     </AppContent>
                 </AppWrapper>
             </ThemeProvider>

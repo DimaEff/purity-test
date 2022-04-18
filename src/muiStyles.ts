@@ -1,3 +1,4 @@
+
 import { colors, createTheme, PaletteMode, Theme } from "@mui/material";
 
 import { BORDER_RADIUS1, BORDER_RADIUS2 } from "./consts/theme";
@@ -13,6 +14,15 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
             main: "#53c318",
         },
     },
+    typography: {
+        fontFamily: [
+            "Montserrat",
+            "sans-serif",
+        ].join(","),
+        allVariants: {
+            color: mode === "light" ? theme.palette.text.primary : colors.grey[400],
+        }
+    },
     components: {
         MuiPaper: {
             defaultProps: {
@@ -22,6 +32,7 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
                 root: {
                     borderRadius: BORDER_RADIUS2,
                     padding: theme.spacing(2),
+                    maxWidth: "100vh",
                 },
             },
         },
