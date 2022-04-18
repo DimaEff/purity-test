@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, SxProps } from "@mui/material";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import 'swiper/css';
-import CarouselNavigationButton from "./CarouselNavigationButton";
 
 
 interface CarouselProps {
