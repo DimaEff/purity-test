@@ -22,6 +22,7 @@ const TestQuestions = () => {
     const [page, setPage] = useState(0);
     // const questions: string[] = t(Localizations.TestQuestions);
     // const questions: string[] = faker.helpers.uniqueArray(() => faker.lorem.word(5), 100);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const questions: string[] = [
         "123123",
         "123123",
