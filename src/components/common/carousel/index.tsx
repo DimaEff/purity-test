@@ -2,8 +2,7 @@ import React from 'react';
 import { Box, SxProps } from "@mui/material";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import 'swiper/css';
-
-import Navigation from "./Navigation";
+import CarouselNavigationButton from "./CarouselNavigationButton";
 
 
 interface CarouselProps {
@@ -11,7 +10,8 @@ interface CarouselProps {
     height?: string | number;
     sxWrapper?: SxProps;
     sxSlide?: SxProps;
-    NavigationComponent?: React.Component | boolean;
+    NavigationComponentTop?: React.FC;
+    NavigationComponentBottom?: React.FC;
 }
 
 const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
@@ -21,7 +21,8 @@ const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
         height,
         sxWrapper,
         sxSlide,
-        NavigationComponent,
+        NavigationComponentTop,
+        NavigationComponentBottom,
         ...props
     }
 ) => {
@@ -43,6 +44,9 @@ const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
                 }}
                 {...props}
             >
+                <Box>
+                    {NavigationComponentTop && <NavigationComponentTop />}
+                </Box>
                 {
                     childrenArray.map(((child, i) => <SwiperSlide key={i}>
                             <Box
@@ -60,7 +64,9 @@ const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
                         </SwiperSlide>
                     ))
                 }
-                {NavigationComponent || <Navigation />}
+                <Box sx={{zIndex: 100, position: "absolute", bottom: 0, width: "100%"}}>
+                    {NavigationComponentBottom && <NavigationComponentBottom />}
+                </Box>
             </Swiper>
         </Box>
     );

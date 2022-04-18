@@ -12,6 +12,7 @@ const PurityTest = () => {
             allowTouchMove={false}
             speed={500}
             height={"100vh"}
+            navigation={false}
         >
             <SectionWrapper title={"Rice Purity Test"}>
                 <StartTest/>
