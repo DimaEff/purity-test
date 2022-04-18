@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Box, Paper, Typography } from "@mui/material";
 import Carousel from "../../common/carousel";
-import { useTranslation } from "react-i18next";
 
 import QuestionsSection from "./questionsSection";
 import CarouselNavigation from "./carouselNavigation";
@@ -17,8 +16,6 @@ const getQuestionsForSection = (questions: string[], page: number): string[] => 
 }
 
 const TestQuestions = () => {
-    const {t} = useTranslation();
-
     const [page, setPage] = useState(0);
     // const questions: string[] = t(Localizations.TestQuestions);
     // const questions: string[] = faker.helpers.uniqueArray(() => faker.lorem.word(5), 100);
