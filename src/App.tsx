@@ -5,7 +5,7 @@ import "./index.css";
 import { getTheme } from "./muiTheme";
 import { AppContent, AppWrapper } from "./components/common";
 import Header from "./components/header";
-import PurityTest from "./pages/PurityTest";
+import PurityTest from "./pages/purityTest";
 
 
 interface ChangePaletteMode {
@@ -35,8 +35,8 @@ function App() {
     return (
         <ChangePaletteModeContext.Provider value={{handleChangeMode}}>
             <ThemeProvider theme={theme}>
+                <Header/>
                 <AppWrapper>
-                    <Header/>
                     <AppContent>
                         <PurityTest/>
                     </AppContent>

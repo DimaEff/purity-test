@@ -1,93 +1,73 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React from 'react';
 import { Box, SxProps } from "@mui/material";
-import Slider from "react-slick";
-
-import Navigation, { NavigationProps } from "./Navigation";
+import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import CarouselNavigationButton from "./CarouselNavigationButton";
 
 
 interface CarouselProps {
-    width: string | number;
-    height: string | number;
-    sx?: SxProps;
-    keys?: (string | number)[];
-    onSuccess?: () => void;
-    CustomNavigation?: React.FC<NavigationProps>;
+    width?: string | number;
+    height?: string | number;
+    sxWrapper?: SxProps;
+    sxSlide?: SxProps;
+    NavigationComponentTop?: React.FC;
+    NavigationComponentBottom?: React.FC;
 }
 
-const Carousel: React.FC<CarouselProps> = (
+const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
     {
         children,
         width,
         height,
-        sx,
-        keys,
-        onSuccess,
-        CustomNavigation,
+        sxWrapper,
+        sxSlide,
+        NavigationComponentTop,
+        NavigationComponentBottom,
+        ...props
     }
 ) => {
     const childrenArray = React.Children.toArray(children);
 
-    const slider = useRef<Slider>(null);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-    const isPrev = useMemo(() => currentSlideIndex > 0, [currentSlideIndex]);
-    const isNext = useMemo(() => currentSlideIndex < childrenArray.length - 1,
-        [childrenArray.length, currentSlideIndex],
-    );
-
     return (
         <Box
             sx={{
-                position: "relative",
-                width,
-                height,
-
-                ".slider-carousel": {
-                    height: "calc(100% - 40px)",
-                },
-
-                ...sx
+                display: "flex",
+                width: width || "100%",
+                height: height || "100%",
+                ...sxWrapper
             }}
         >
-            <Slider
-                ref={slider}
-                swipe
-                arrows={false}
-                beforeChange={(currentSlide, nextSlide) => setCurrentSlideIndex(nextSlide)}
-                infinite={false}
-                speed={300}
-                className={"slider-carousel"}
+            <Swiper
+                style={{
+                    width: "100%",
+                    height: "100%",
+                }}
+                {...props}
             >
-                {
-                    childrenArray.map((child, i) => <Box
-                        key={keys?.length ? keys[i] : i}
-                        sx={{
-                            position: "relative",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            height: "100%",
-                        }}
-                    >
-                        {child}
-                    </Box>)
-                }
-                <Box
-                    sx={{
-                        zIndex: 50,
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        width: "100%",
-                    }}
-                >
+                <Box>
+                    {NavigationComponentTop && <NavigationComponentTop />}
                 </Box>
-            </Slider>
-            {
-                CustomNavigation ?
-                    <CustomNavigation slider={slider} isPrev={isPrev} isNext={isNext} onSuccess={onSuccess}/> :
-                    <Navigation slider={slider} isPrev={isPrev} isNext={isNext} onSuccess={onSuccess}/>
-            }
+                {
+                    childrenArray.map(((child, i) => <SwiperSlide key={i}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    width: "100%",
+                                    height: "100%",
+                                    ...sxSlide,
+                                }}
+                            >
+                                {child}
+                            </Box>
+                        </SwiperSlide>
+                    ))
+                }
+                <Box sx={{zIndex: 100, position: "absolute", bottom: 0, width: "100%"}}>
+                    {NavigationComponentBottom && <NavigationComponentBottom />}
+                </Box>
+            </Swiper>
         </Box>
     );
 };
