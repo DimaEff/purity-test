@@ -4,7 +4,7 @@ import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 
 
-interface CarouselProps {
+interface CarouselNativeProps {
     width?: string | number;
     height?: string | number;
     sxWrapper?: SxProps;
@@ -13,7 +13,9 @@ interface CarouselProps {
     NavigationComponentBottom?: React.FC;
 }
 
-const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
+export type CarouselProps = CarouselNativeProps & Omit<SwiperProps, "height">;
+
+const Carousel: React.FC<CarouselProps> = (
     {
         children,
         width,
@@ -51,8 +53,8 @@ const Carousel: React.FC<CarouselProps & Omit<SwiperProps, "height">> = (
                             <Box
                                 sx={{
                                     display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
+                                    // justifyContent: "center",
+                                    // alignItems: "center",
                                     width: "100%",
                                     height: "100%",
                                     ...sxSlide,

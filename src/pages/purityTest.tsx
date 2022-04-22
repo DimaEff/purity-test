@@ -11,10 +11,10 @@ const PurityTest = () => {
             allowSlidePrev={false}
             allowTouchMove={false}
             speed={500}
-            height={"100vh"}
+            height={"110vh"}
             navigation={false}
         >
-            <SectionWrapper title={"Rice Purity Test"}>
+            <SectionWrapper wrapperSx={{height: "80vh", display: "flex", justifyContent: "center"}} title={"Rice Purity Test"}>
                 <StartTest/>
             </SectionWrapper>
             <TestQuestions/>
