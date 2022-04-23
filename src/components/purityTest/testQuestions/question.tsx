@@ -1,5 +1,6 @@
 import React, { useContext, useMemo } from 'react';
-import { Checkbox, ListItem, Typography } from "@mui/material";
+import { Box, Checkbox, Divider, ListItem, Typography } from "@mui/material";
+
 import { TestContext } from "./testQuestions";
 
 
@@ -8,12 +9,12 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({question}) => {
-    const { selectedCheckboxes, addSelectedCheckbox, removeSelectedCheckbox } = useContext(TestContext);
+    const {selectedCheckboxes, addSelectedCheckbox, removeSelectedCheckbox} = useContext(TestContext);
 
     const isChecked = useMemo(
         () => selectedCheckboxes.includes(question),
         [question, selectedCheckboxes],
-        );
+    );
 
     const handleChange = () => {
         if (!isChecked) {
@@ -24,29 +25,46 @@ const Question: React.FC<QuestionProps> = ({question}) => {
     }
 
     return (
-        <ListItem
-            sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "100%",
-                padding: 0,
-                margin: 0,
-            }}
-        >
-            <Typography fontWeight={"bold"} variant={"h6"}>
-                {question}
-            </Typography>
-            <Checkbox
-                checked={isChecked}
-                onChange={handleChange}
+        <>
+            <ListItem
                 sx={{
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 40,
-                        margin: 0,
-                    },
+                    position: "relative",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space",
+                    width: "100%",
+                    minHeight: 48,
+                    padding: 0,
+                    paddingRight: 8,
+                    margin: 0,
                 }}
-            />
-        </ListItem>
+            >
+                <Typography fontWeight={"bold"} variant={"h6"}>
+                    {question}
+                </Typography>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        top: 0,
+                        right: 0,
+                    }}
+                >
+                    <Checkbox
+                        checked={isChecked}
+                        onChange={handleChange}
+                        sx={{
+                            height: 48,
+                            width: 48,
+                            '& .MuiSvgIcon-root': {
+                                fontSize: 40,
+                                margin: 0,
+                            },
+                        }}
+                    />
+                </Box>
+            </ListItem>
+            <Divider/>
+        </>
     );
 };
 

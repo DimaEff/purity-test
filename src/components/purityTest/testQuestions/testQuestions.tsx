@@ -30,21 +30,19 @@ export const TestContext = React.createContext<TestContext>({
     resetCheckboxes: () => {
     },
     isEnd: false,
-    setIsEnd: value => {
+    setIsEnd: () => {
     },
 });
 
 const TestQuestions = () => {
     const {isMobile} = useBreakpoints();
 
-    // carousel settings
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [carouselSettings, setCarouselSettings] = useState<CarouselProps>({
+    const carouselSettings: CarouselProps = {
         allowSlidePrev: true,
         NavigationComponentBottom: CarouselNavigation,
         onSlideChange: swiper => setPage(swiper.activeIndex),
         allowTouchMove: false,
-    });
+    };
 
     const [isEnd, setIsEnd] = useState(false);
     const [page, setPage] = useState(0);
@@ -52,7 +50,7 @@ const TestQuestions = () => {
     // const questions: string[] = t(Localizations.TestQuestions);
     // const questions: string[] = faker.helpers.uniqueArray(() => faker.lorem.word(5), 100);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const questions: string[] = useMemo(() => faker.helpers.uniqueArray(() => faker.datatype.uuid(), 100), []);
+    const questions: string[] = useMemo(() => faker.helpers.uniqueArray(() => faker.lorem.words(9), 100), []);
     const questionsCount = questions.length;
     const sectionsCont: null[] = new Array(Math.ceil(questionsCount / 10)).fill(null);
 
