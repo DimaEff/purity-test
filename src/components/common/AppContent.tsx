@@ -8,7 +8,7 @@ const AppContent: React.FC = ({children}) => {
             sx={theme => ({
                 width: "100%",
                 maxWidth: "100%",
-                margin: theme.spacing(2, 0),
+                padding: theme.spacing(2, 1),
             })}
             direction={"column"}
             container

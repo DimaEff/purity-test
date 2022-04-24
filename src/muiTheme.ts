@@ -3,7 +3,7 @@ import { colors, createTheme, PaletteMode, Theme } from "@mui/material";
 
 import { BORDER_RADIUS1, BORDER_RADIUS2,  } from "./consts/theme";
 
-export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
+export const getTheme = (mode: PaletteMode, isMobile: boolean, theme: Theme) => createTheme({
     palette: {
         mode,
         primary: {
@@ -32,7 +32,7 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
                 root: {
                     borderRadius: BORDER_RADIUS2,
                     padding: theme.spacing(2),
-                    maxWidth: "100vh",
+                    // maxWidth: "100vh",
                 },
             },
         },

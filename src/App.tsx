@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
 
 import "./index.css";
 import { getTheme } from "./muiTheme";
 import { AppContent, AppWrapper } from "./components/common";
-import Header from "./components/header";
+import { HeaderComponent } from "./components/header";
 import PurityTest from "./pages/purityTest";
+import { useBreakpoints } from "./hooks";
 
 
 interface ChangePaletteMode {
@@ -27,17 +28,18 @@ function App() {
         setMode(mode);
         localStorage.setItem("mode", mode);
     }
+
+    const {isMobile} = useBreakpoints();
     const thm = useTheme();
-    // dependencies not needed t
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const theme = React.useMemo(() => getTheme(mode, thm), [mode]);
+    // dependencies not needed thm
+    const theme = useMemo(() => getTheme(mode, isMobile, thm), [mode, isMobile]);
 
     return (
         <ChangePaletteModeContext.Provider value={{handleChangeMode}}>
             <ThemeProvider theme={theme}>
-                <Header/>
                 <AppWrapper>
                     <AppContent>
+                        <HeaderComponent/>
                         <PurityTest/>
                     </AppContent>
                 </AppWrapper>

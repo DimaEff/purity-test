@@ -10,7 +10,7 @@ import DesktopNavigation from "./navigation/DesktopNavigation";
 import Logo from "./Logo";
 
 
-const HeaderComponent = () => {
+export const HeaderComponent = () => {
     const {isMobile} = useBreakpoints();
 
     return (
@@ -37,14 +37,11 @@ const HeaderComponent = () => {
 };
 
 const Header = () => {
-    const {isMobile} = useBreakpoints();
-
     return (
         <Box
             sx={theme =>( {
                 zIndex: theme.zIndex.modal,
                 position: "fixed",
-                [isMobile ? "bottom" : "top"]: 0,
                 width: "100%",
                 padding: theme.spacing(2, 0),
             })}

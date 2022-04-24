@@ -10,7 +10,7 @@ interface ScoreSettings {
 
 /**
  *  @key is the upper limit of "Rice purity test score meaning" in https://purity-test.com/
- *  @param textId - the key of score text(public/locales/ru/translation.json/purityTest/result)
+ *  @param textId - the key of score text(public/locales/<language>/translation.json/purityTest/result)
  *  @param color - the font color of score value in result page
  **/
 const resultScores: {[key: number]: ScoreSettings} = {

@@ -1,12 +1,11 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import Carousel, { CarouselProps } from "../../common/carousel";
+import faker from "@faker-js/faker";
 
+import Carousel, { CarouselProps } from "../../common/carousel";
 import QuestionsSection from "./questionsSection";
 import CarouselNavigation from "./carouselNavigation";
-import { useBreakpoints } from "../../../hooks";
 import Result from "./result";
-import faker from "@faker-js/faker";
 
 
 const QUESTIONS_IN_PAGE = 10;
@@ -35,8 +34,6 @@ export const TestContext = React.createContext<TestContext>({
 });
 
 const TestQuestions = () => {
-    const {isMobile} = useBreakpoints();
-
     const carouselSettings: CarouselProps = {
         allowSlidePrev: true,
         NavigationComponentBottom: CarouselNavigation,
@@ -87,7 +84,6 @@ const TestQuestions = () => {
                     width: "100%",
                     height: "80vh",
                     margin: theme.spacing(1.5),
-                    paddingTop: isMobile ? theme.spacing(5) : theme.spacing(10),
                 })}
             >
                 <Box
