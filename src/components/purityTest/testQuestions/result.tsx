@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useSwiper } from "swiper/react";
+import { useTranslation } from "react-i18next";
 
+import { QUESTIONS_COUNT } from "../../../consts/app";
 import { TestContext } from "./testQuestions";
 import ShareButtons from "./share/shareButtons";
-import { orange } from "@mui/material/colors";
+import { getNeededScoreResult } from "../utils";
 
 
-interface ResultProps {
-}
-
-const Result: React.FC<ResultProps> = () => {
+const Result = () => {
+    const { t } = useTranslation();
     const swiper = useSwiper();
     const {selectedCheckboxes, resetCheckboxes, setIsEnd} = useContext(TestContext);
 
@@ -19,6 +19,9 @@ const Result: React.FC<ResultProps> = () => {
         resetCheckboxes();
         swiper.slideTo(0);
     }
+
+    const score = useMemo(() => QUESTIONS_COUNT - selectedCheckboxes.length, [selectedCheckboxes.length]);
+    const { color, textId } = useMemo(() => getNeededScoreResult(score), [score]);
 
     return (
         <Stack
@@ -38,15 +41,12 @@ const Result: React.FC<ResultProps> = () => {
             <Typography
                 fontWeight={"bold"}
                 variant={"h2"}
-                sx={{
-                    color: orange[800],
-                }}
+                sx={{color}}
             >
-                {selectedCheckboxes.length}
+                {QUESTIONS_COUNT - selectedCheckboxes.length}
             </Typography>
             <Typography textAlign={"center"} fontWeight={"bold"}>
-                Individuals that score 94 to 97 are probably very pure. However, they may have done a few innocent
-                things like kissing or holding hands with other people that aren't family members.
+                {t(textId)}
             </Typography>
             <ShareButtons/>
             <Box>

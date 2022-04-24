@@ -11,13 +11,14 @@
       "success": "РЕЗУЛЬТАТ"
     },
 
+    "_comment_result_texts": "Тексты, которые отображаются при различном результате. Ключ - верхний предел 'Score meaning' на https://purity-test.com/",
     "result": {
-        "100-98": "",
-        "97-94": "",
-        "93-77": "",
-        "76-45": "",
-        "44-9": "",
-        "9-0": ""
+        "100": "Individuals that score 98 to 100 are considered to have a great kind of personality, and they are considered relatively pure. However, it's rare to find individuals that'll score a solid 100.",
+        "97": "Individuals that score 94 to 97 are probably very pure. However, they may have done a few innocent things like kissing or holding hands with other people that aren't family members.",
+        "93": "People that score between 93 and 77 are relatively pure. They could have made a few morally questionable decisions; however, they haven't necessarily lost their moral compass.",
+        "76": "Individuals found within this bracket have probably done their share of sexual, drug, and law-breaking activities. As such, they aren't pure, but they aren't exactly the most colorful of the bunch.",
+        "44": "Individuals found within the 44 to 9 bracket are hardcore, probably done most of the activities listed in the survey except a few major ones. However, they aren't super hardcore.",
+        "8": "Individuals in this category are super hardcore, having done almost all activities mentioned in the survey, including hard drugs and jail time."
     }
   },
 
