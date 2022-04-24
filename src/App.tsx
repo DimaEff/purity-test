@@ -32,6 +32,7 @@ function App() {
     const {isMobile} = useBreakpoints();
     const thm = useTheme();
     // dependencies not needed thm
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const theme = useMemo(() => getTheme(mode, isMobile, thm), [mode, isMobile]);
 
     return (
