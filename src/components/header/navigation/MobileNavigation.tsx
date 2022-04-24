@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MenuItem, Select } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from '@mui/icons-material/Clear';
 
-import { Route, routes } from "../../../consts/route";
 import HashLink from "../HashLink";
+import { Route, routes } from "../../../consts/route";
 
 
 const MobileNavigation = () => {
     const keys = Object.keys(routes);
+    const [open, setOpen] = useState(false);
 
     return (
-        <Select IconComponent={MenuIcon}>
+        <Select
+            open={open}
+            onOpen={() => setOpen(true)}
+            onClose={() => setOpen(false)}
+            IconComponent={open ? ClearIcon : MenuIcon}
+        >
             {keys.map((to: Route) => <MenuItem key={to.toString()}>
                 <HashLink to={to} variant={"link"}/>
             </MenuItem>)}

@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import { Box, Checkbox, Divider, ListItem, Typography } from "@mui/material";
 
 import { TestContext } from "./testQuestions";
+import { useBreakpoints } from "../../../hooks";
 
 
 interface QuestionProps {
@@ -9,6 +10,8 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({question}) => {
+    const { isMobile } = useBreakpoints();
+
     const {selectedCheckboxes, addSelectedCheckbox, removeSelectedCheckbox} = useContext(TestContext);
 
     const isChecked = useMemo(
@@ -27,39 +30,39 @@ const Question: React.FC<QuestionProps> = ({question}) => {
     return (
         <>
             <ListItem
-                sx={{
+                sx={theme => ({
                     position: "relative",
                     display: "flex",
                     alignItems: "flex-start",
                     justifyContent: "space",
                     width: "100%",
-                    minHeight: 48,
-                    padding: 0,
-                    paddingRight: 8,
-                    margin: 0,
-                }}
+                    minHeight: theme.spacing(6),
+                    padding: theme.spacing(0),
+                    paddingRight: theme.spacing(5),
+                    margin: theme.spacing(0),
+                })}
             >
-                <Typography fontWeight={"bold"} variant={"h6"}>
+                <Typography fontWeight={"bold"} variant={isMobile ? "body1" : "h6"}>
                     {question}
                 </Typography>
                 <Box
-                    sx={{
+                    sx={theme => ({
                         position: "absolute",
-                        top: 0,
-                        right: 0,
-                    }}
+                        top: theme.spacing(0),
+                        right: theme.spacing(0),
+                    })}
                 >
                     <Checkbox
                         checked={isChecked}
                         onChange={handleChange}
-                        sx={{
-                            height: 48,
-                            width: 48,
+                        sx={theme => ({
+                            height: theme.spacing(6),
+                            width: theme.spacing(6),
                             '& .MuiSvgIcon-root': {
-                                fontSize: 40,
+                                fontSize: theme.spacing(5),
                                 margin: 0,
                             },
-                        }}
+                        })}
                     />
                 </Box>
             </ListItem>
