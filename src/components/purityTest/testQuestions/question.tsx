@@ -1,5 +1,6 @@
 import React, { useContext, useMemo, useState } from 'react';
-import { Box, Checkbox, Divider, ListItem, Typography } from "@mui/material";
+import { Box, Checkbox, Divider, ListItem, Typography, useTheme } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 import { TestContext } from "./testQuestions";
 import { useBreakpoints } from "../../../hooks";
@@ -29,10 +30,9 @@ const Question: React.FC<QuestionProps> = ({question, number}) => {
     }
 
     const [hover, setHover] = useState(false);
-
-    const hoverSettings = useMemo(() => hover ? {
-        color: "#fff",
-    } : undefined, [hover]);
+    const theme = useTheme();
+    const hoverColor = useMemo(() => theme.palette.mode === "light" ? blue[500] : "#fff", [theme.palette.mode]);
+    const color = useMemo(() => hover ? hoverColor : undefined, [hover, hoverColor]);
 
     return (
         <>
@@ -52,7 +52,7 @@ const Question: React.FC<QuestionProps> = ({question, number}) => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             >
-                <Typography sx={hoverSettings} fontWeight={isMobile ? "normal" : "bold"}
+                <Typography color={color} fontWeight={isMobile ? "normal" : "bold"}
                             variant={isMobile ? "body1" : "h6"}>
                     {`${number}.`} {question}
                 </Typography>
@@ -68,13 +68,13 @@ const Question: React.FC<QuestionProps> = ({question, number}) => {
                         checked={isChecked}
                         onChange={handleChange}
                         sx={theme => ({
+                            color,
                             height: theme.spacing(6),
                             width: theme.spacing(6),
                             '& .MuiSvgIcon-root': {
                                 fontSize: theme.spacing(5),
                                 margin: 0,
                             },
-                            ...hoverSettings,
                         })}
                     />
                 </Box>
