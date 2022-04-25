@@ -92,9 +92,17 @@ const TestQuestions = () => {
                         justifyContent: "flex-end",
                     }}
                 >
-                    <Typography fontWeight={"bold"} variant={"h4"}>
-                        {questionProgress}/{questionsCount}
-                    </Typography>
+                    <Stack direction={"row"} spacing={0.75}>
+                        <Typography fontWeight={"bold"} variant={"h4"}>
+                            {questionProgress}
+                        </Typography>
+                        <Typography fontWeight={"bold"} variant={"h4"}>
+                            /
+                        </Typography>
+                        <Typography fontWeight={"bold"} variant={"h4"}>
+                            {questionsCount}
+                        </Typography>
+                    </Stack>
                 </Box>
                 <Paper sx={{height: "85%"}}>
                     <Carousel {...carouselSettings}>

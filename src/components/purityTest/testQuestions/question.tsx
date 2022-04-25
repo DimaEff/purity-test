@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { Box, Checkbox, Divider, ListItem, Typography } from "@mui/material";
 
 import { TestContext } from "./testQuestions";
@@ -7,10 +7,11 @@ import { useBreakpoints } from "../../../hooks";
 
 interface QuestionProps {
     question: string;
+    number: string;
 }
 
-const Question: React.FC<QuestionProps> = ({question}) => {
-    const { isMobile } = useBreakpoints();
+const Question: React.FC<QuestionProps> = ({question, number}) => {
+    const {isMobile} = useBreakpoints();
 
     const {selectedCheckboxes, addSelectedCheckbox, removeSelectedCheckbox} = useContext(TestContext);
 
@@ -27,6 +28,12 @@ const Question: React.FC<QuestionProps> = ({question}) => {
         }
     }
 
+    const [hover, setHover] = useState(false);
+
+    const hoverSettings = useMemo(() => hover ? {
+        color: "#fff",
+    } : undefined, [hover]);
+
     return (
         <>
             <ListItem
@@ -37,16 +44,21 @@ const Question: React.FC<QuestionProps> = ({question}) => {
                     justifyContent: "space",
                     width: "100%",
                     minHeight: theme.spacing(6),
-                    padding: theme.spacing(0),
-                    paddingRight: theme.spacing(5),
+                    paddingRight: theme.spacing(6),
                     margin: theme.spacing(0),
+                    cursor: "pointer",
                 })}
+                onClick={handleChange}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
             >
-                <Typography fontWeight={"bold"} variant={isMobile ? "body1" : "h6"}>
-                    {question}
+                <Typography sx={hoverSettings} fontWeight={isMobile ? "normal" : "bold"}
+                            variant={isMobile ? "body1" : "h6"}>
+                    {`${number}.`} {question}
                 </Typography>
                 <Box
                     sx={theme => ({
+                        zIndex: 20,
                         position: "absolute",
                         top: theme.spacing(0),
                         right: theme.spacing(0),
@@ -62,6 +74,7 @@ const Question: React.FC<QuestionProps> = ({question}) => {
                                 fontSize: theme.spacing(5),
                                 margin: 0,
                             },
+                            ...hoverSettings,
                         })}
                     />
                 </Box>

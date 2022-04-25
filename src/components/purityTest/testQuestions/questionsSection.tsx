@@ -9,7 +9,9 @@ interface QuestionsSectionProps {
     page: number;
 }
 
-const QuestionsSection: React.FC<QuestionsSectionProps> = ({questions}) => {
+const QuestionsSection: React.FC<QuestionsSectionProps> = ({questions, page}) => {
+    const getQuestionNum = (num: number): string => (+(page.toString() + num.toString()) + 1).toString();
+
     return (
         <List
             sx={{
@@ -19,7 +21,7 @@ const QuestionsSection: React.FC<QuestionsSectionProps> = ({questions}) => {
                 paddingRight: 1,
             }}
         >
-            {questions.map(q => <Question key={q} question={q}/>)}
+            {questions.map((q, i) => <Question key={q} question={q} number={getQuestionNum(i)}/>)}
         </List>
     );
 };
