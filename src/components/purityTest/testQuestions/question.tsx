@@ -62,6 +62,10 @@ const Question: React.FC<QuestionProps> = ({question, number}) => {
                         position: "absolute",
                         top: theme.spacing(0),
                         right: theme.spacing(0),
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
                     })}
                 >
                     <Checkbox

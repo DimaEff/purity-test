@@ -18,7 +18,6 @@ const QuestionsSection: React.FC<QuestionsSectionProps> = ({questions, page}) =>
                 width: "100%",
                 height: "85%",
                 overflowY: "scroll",
-                paddingRight: 1,
             }}
         >
             {questions.map((q, i) => <Question key={q} question={q} number={getQuestionNum(i)}/>)}

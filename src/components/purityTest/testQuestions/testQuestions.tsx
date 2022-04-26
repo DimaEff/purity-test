@@ -104,7 +104,12 @@ const TestQuestions = () => {
                         </Typography>
                     </Stack>
                 </Box>
-                <Paper sx={{height: "85%"}}>
+                <Paper
+                    sx={theme => ({
+                        height: "85%",
+                        padding: theme.spacing(2, 1),
+                    })}
+                >
                     <Carousel {...carouselSettings}>
                         {
                             sectionsCont.map((e, i) => <QuestionsSection
