@@ -1,30 +1,47 @@
 {
+  "_comment_routes": "Эти значения соответствуют ссылкам в хэдере",
+  "hashRoutes": {
+    "faq": "FAQ",
+    "scoreMeaning": "РЕЗУЛЬТАТЫ"
+  },
+
   "_comment_test": "Все, что связано непосредственно с тестом",
   "purityTest": {
+    "title": "Rice Purity Test",
+    "description": "This rice purity test will let you know how pure you are. The test consists of 100 questions and the more your positive answers, the lower your purity score. Take the test now to find out your score!",
+    "startTestButton": "Start test",
+
     "_comment_questions": "Все отображаемые вопросы",
     "questions": [],
 
     "_comment_buttons": "Кнопки управления тестом",
     "navigationButtons": {
-      "next": "ДАЛЕЕ",
-      "prev": "<",
-      "success": "РЕЗУЛЬТАТ"
+      "result": "РЕЗУЛЬТАТ",
+      "tryAgain": "Try again"
     },
 
-    "_comment_result_texts": "Тексты, которые отображаются при различном результате. Ключ - верхний предел 'Score meaning' на https://purity-test.com/",
-    "result": {
-        "100": "Individuals that score 98 to 100 are considered to have a great kind of personality, and they are considered relatively pure. However, it's rare to find individuals that'll score a solid 100.",
-        "97": "Individuals that score 94 to 97 are probably very pure. However, they may have done a few innocent things like kissing or holding hands with other people that aren't family members.",
-        "93": "People that score between 93 and 77 are relatively pure. They could have made a few morally questionable decisions; however, they haven't necessarily lost their moral compass.",
-        "76": "Individuals found within this bracket have probably done their share of sexual, drug, and law-breaking activities. As such, they aren't pure, but they aren't exactly the most colorful of the bunch.",
-        "44": "Individuals found within the 44 to 9 bracket are hardcore, probably done most of the activities listed in the survey except a few major ones. However, they aren't super hardcore.",
-        "8": "Individuals in this category are super hardcore, having done almost all activities mentioned in the survey, including hard drugs and jail time."
+    "_comment_share": "Все, что связано с возможностью поделиться прохождением теста",
+    "share": {
+
+      "_comment_share_text": "Текст, который отображется при нажатии на кнопку поделиться; {{score}} - результат прохождения теста",
+      "title": "My purity score is {{score}}!",
+
+      "_comment_share_гкд": "Ссылка на сайт",
+      "url": ""
     }
   },
 
-  "_comment_routes": "Эти значения соответствуют ссылкам в хэдере",
-  "hashRoutes": {
-    "faq": "FAQ",
-    "scoreMeaning": "РЕЗУЛЬТАТЫ"
+  "_comment_score_meaning": "Все, что связано с меню 'Score meaning'",
+  "scoreMeaning": {
+    "title": "Rice purity test score meaning",
+    "description": "The test is meant to determine an individual's purity and ethics. However, you have to note that one individual's score on the test could be good enough for them but bad for other individuals. Keep in mind that 100 is the best Rice Purity test score while 0 is the worst.",
+
+    "_comment_result_texts": "Тексты, которые отображаются при различном результате + те, что во меню 'Score meaning'. Ключ - верхний предел 'Score meaning' на https://purity-test.com/",
+    "100": "Individuals that score 98 to 100 are considered to have a great kind of personality, and they are considered relatively pure. However, it's rare to find individuals that'll score a solid 100.",
+    "97": "Individuals that score 94 to 97 are probably very pure. However, they may have done a few innocent things like kissing or holding hands with other people that aren't family members.",
+    "93": "People that score between 93 and 77 are relatively pure. They could have made a few morally questionable decisions; however, they haven't necessarily lost their moral compass.",
+    "76": "Individuals found within this bracket have probably done their share of sexual, drug, and law-breaking activities. As such, they aren't pure, but they aren't exactly the most colorful of the bunch.",
+    "44": "Individuals found within the 44 to 9 bracket are hardcore, probably done most of the activities listed in the survey except a few major ones. However, they aren't super hardcore.",
+    "8": "Individuals in this category are super hardcore, having done almost all activities mentioned in the survey, including hard drugs and jail time."
   }
 }

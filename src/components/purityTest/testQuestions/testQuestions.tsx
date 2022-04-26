@@ -45,7 +45,6 @@ const TestQuestions = () => {
     const [page, setPage] = useState(0);
     const [selectedCheckboxes, setSelectedCheckboxes] = useState<string[]>([]);
     // const questions: string[] = t(Localizations.TestQuestions);
-    // const questions: string[] = faker.helpers.uniqueArray(() => faker.lorem.word(5), 100);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const questions: string[] = useMemo(() => faker.helpers.uniqueArray(() => faker.lorem.words(9), 100), []);
     const questionsCount = questions.length;

@@ -5,8 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import { QUESTIONS_COUNT } from "../../../consts/app";
 import { TestContext } from "./testQuestions";
-import ShareButtons from "./share/shareButtons";
-import { getNeededScoreResult } from "../utils";
+import ShareButtons from "./shareButtons";
+import { getNeededScoreResult } from "../../scoreMeaning/utils";
+import { Localizations } from "../localizations";
 
 
 const Result = () => {
@@ -48,10 +49,10 @@ const Result = () => {
             <Typography textAlign={"center"} fontWeight={"bold"}>
                 {t(textId)}
             </Typography>
-            <ShareButtons/>
+            <ShareButtons score={score}/>
             <Box>
                 <Button variant={"contained"} onClick={handleTryAgain}>
-                    Try again
+                    {t(Localizations.TryAgain)}
                 </Button>
             </Box>
         </Stack>

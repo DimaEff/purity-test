@@ -1,6 +1,6 @@
 import { green, lightGreen, lime, orange } from "@mui/material/colors";
 
-import { Localizations } from "./localization";
+import { Localizations } from "./localizations";
 
 
 interface ScoreSettings {

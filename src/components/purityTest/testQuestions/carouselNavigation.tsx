@@ -3,12 +3,16 @@ import { useSwiper } from "swiper/react";
 import { Button, colors, SxProps, Theme, Typography, useTheme } from "@mui/material";
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
+import { useTranslation } from "react-i18next";
 
 import { TestContext } from "./testQuestions";
 import ButtonStack from "../../common/ButtonStack";
+import { Localizations } from "../localizations";
 
 
 const CarouselNavigation = () => {
+    const { t } = useTranslation();
+
     const swiper = useSwiper();
     const theme = useTheme();
     const {isEnd, setIsEnd} = useContext(TestContext);
@@ -47,7 +51,7 @@ const CarouselNavigation = () => {
                                 variant={"h6"}
                                 fontWeight={"bold"}
                             >
-                                Result
+                                {t(Localizations.ResultNavigationButton)}
                             </Typography>
                         </Button>
                     }
