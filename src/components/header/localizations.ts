@@ -2,7 +2,7 @@ import { getLocaleName } from "../../utils";
 
 const prefixes = ["hashRoutes"];
 
-export const Locales = {
+export const Localizations = {
       HashRouteFaq: getLocaleName([...prefixes, "faq"]),
       HashRouteScoreMeaning: getLocaleName([...prefixes, "scoreMeaning"]),
 };

@@ -7,6 +7,7 @@ import { AppContent, AppWrapper } from "./components/common";
 import { HeaderComponent } from "./components/header";
 import PurityTest from "./pages/purityTest";
 import ScoreMeaning from "./pages/scoreMeaning";
+import Faq from "./pages/faq";
 
 
 interface ChangePaletteMode {
@@ -42,6 +43,7 @@ function App() {
                         <HeaderComponent/>
                         <PurityTest/>
                         <ScoreMeaning/>
+                        <Faq />
                     </AppContent>
                 </AppWrapper>
             </ThemeProvider>

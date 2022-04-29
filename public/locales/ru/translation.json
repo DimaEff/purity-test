@@ -43,5 +43,21 @@
     "76": "Individuals found within this bracket have probably done their share of sexual, drug, and law-breaking activities. As such, they aren't pure, but they aren't exactly the most colorful of the bunch.",
     "44": "Individuals found within the 44 to 9 bracket are hardcore, probably done most of the activities listed in the survey except a few major ones. However, they aren't super hardcore.",
     "8": "Individuals in this category are super hardcore, having done almost all activities mentioned in the survey, including hard drugs and jail time."
-  }
+  },
+
+  "_comment_faq": "Все, что связано с FAQ + добавление вопросов",
+  "faq": [
+    {
+      "title": "What is the rice purity test?",
+      "description": "The rice purity test refers to a 100-question survey that assesses an individual's level of innocence regarding worldly vices. The survey involves various questions involving drugs, sex, crime, deceit, and other deeds considered immoral or non-virtuous.\nThe survey has a 0 to 100 score. Those scoring close to 100 are the most innocent, and those scoring close to 0 are the least innocent. The questions are answered by individuals who select either of two choices yes or no.\nThe score from the test is meant to help participants realize their actions and work so that they can do better in life. It's voluntary and common among college students. The test is meant to help them create better and stronger bonds.\nCurrently trending on TikTok, the test has over 77.8 million participants on various social media platforms and the Internet. There's a minimum of three types of rice purity test: the rice purity test for boys, girls and the TikTok rice purity test. "
+    },
+    {
+      "title": "Who created the rice purity test?",
+      "description": " The rice purity test, a type of personality test, was a 100-question survey created by Rice university located in Houston in the 1980s. The test was meant to research participant's intimate life using various questions related to criminal records, sexual activity, education, and society.\nThe first test was conducted in 1924 and was presented to women with questions like, \"Have you ever cheated?\", \"Have you ever been drunk?\" etc. It is meant to help participants understand their general personality instead of asking for answers from experts.\nThe new 21st-century version\n\nTwo friends Grace Wetsel (@50_shades_of_grace) and Ella Menashe (@ellemno), who also happen to be TikTok users, decided that the original test was outdated. Thus, they've developed a new version with relevant questions adapted to the current generation. "
+    },
+    {
+      "title": "How to take the test?",
+      "description": "The Purity test participant is supposed to answer a series of questions (a hundred questions) related to various aspects of their lives. A few examples include: Kissed someone below the belt? Masturbated while another person was in the room? Been massaged or massaged sensually? Etc.\nParticipants have to tick each statement or question representing an action they have participated in before, leaving those they haven't unmarked. The answers are calculated, and a result is provided. Participants are placed in various groups depending on how innocent they are.\nThey are also given a descriptive analysis and a nickname, i.e., \"wild child\" or \"angel,\" depending on which category they fall in. The new Rice Purity test follows a similar format; however, the questions presented have been updated to fit the current society's moral guideline and apply to the 21st century's standards.\nRemember that the Rice Purity test is designed for educational purposes. It is meant to provide participants with critical insights that they could use to improve their life positively. "
+    }
+  ]
 }

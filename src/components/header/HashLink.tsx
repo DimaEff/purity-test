@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Typography } from "@mui/material";
 
 import { Route, routes } from "../../consts/route";
-import { Locales } from "./locales";
+import { Localizations } from "./localizations";
 
 
 type Variant = "button" | "link";
@@ -15,8 +15,8 @@ interface HashLinkProps {
 }
 
 const routesValues: any = {
-    faq: Locales.HashRouteFaq,
-    scoreMeaning: Locales.HashRouteScoreMeaning,
+    faq: Localizations.HashRouteFaq,
+    scoreMeaning: Localizations.HashRouteScoreMeaning,
 };
 
 const HashLink: React.FC<HashLinkProps> = ({to, variant = "button"}) => {

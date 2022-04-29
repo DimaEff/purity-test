@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 
 
 const AppContent: React.FC = ({children}) => {
@@ -13,7 +13,9 @@ const AppContent: React.FC = ({children}) => {
             direction={"column"}
             container
         >
-            {children}
+            <Stack sx={{width: "100%"}} spacing={6}>
+                {children}
+            </Stack>
         </Grid>
     );
 };

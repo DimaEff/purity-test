@@ -3,11 +3,13 @@ import { IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from '@mui/icons-material/Clear';
 import { scroller } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 import { Route, routes } from "../../../consts/route";
 
 
 const MobileNavigation = () => {
+    const { t } = useTranslation();
     const keys = Object.keys(routes);
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -44,7 +46,7 @@ const MobileNavigation = () => {
                 }}
             >
                 {keys.map((to: Route) => <MenuItem onClick={() => handleClickItem(to.toString())} key={to}>
-                    {to}
+                    {t(routes[to])}
                 </MenuItem>)}
             </Menu>
         </>

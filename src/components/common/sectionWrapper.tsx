@@ -5,7 +5,7 @@ import { routes, Route } from "../../consts/route";
 
 
 interface SectionWrapperProps {
-    title: React.ReactNode;
+    title?: React.ReactNode;
     wrapperSx?: SxProps;
     scrollName?: Route;
 }
@@ -21,9 +21,9 @@ const SectionWrapper: React.FC<SectionWrapperProps & TypographyProps> = (
 ) => {
     const content = (
         <Stack spacing={3} sx={wrapperSx}>
-            <Typography fontWeight={700} textAlign={"center"} width={"100%"} variant={"h3"} {...props}>
+            {title && <Typography fontWeight={700} textAlign={"center"} width={"100%"} variant={"h3"} {...props}>
                 {title}
-            </Typography>
+            </Typography>}
             {children}
         </Stack>
     );
