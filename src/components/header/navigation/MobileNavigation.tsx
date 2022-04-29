@@ -1,27 +1,53 @@
-import React, { useState } from 'react';
-import { MenuItem, Select } from "@mui/material";
+import React from 'react';
+import { IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from '@mui/icons-material/Clear';
+import { scroller } from "react-scroll";
 
-import HashLink from "../HashLink";
 import { Route, routes } from "../../../consts/route";
 
 
 const MobileNavigation = () => {
     const keys = Object.keys(routes);
-    const [open, setOpen] = useState(false);
+
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClickButton = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClickItem = (to: string) => {
+        scroller.scrollTo(to, {
+            spy: true,
+            smooth: true,
+            duration: 500,
+        });
+        setAnchorEl(null);
+    };
 
     return (
-        <Select
-            open={open}
-            onOpen={() => setOpen(true)}
-            onClose={() => setOpen(false)}
-            IconComponent={open ? ClearIcon : MenuIcon}
-        >
-            {keys.map((to: Route) => <MenuItem key={to.toString()}>
-                <HashLink to={to} variant={"link"}/>
-            </MenuItem>)}
-        </Select>
+        <>
+            <IconButton
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClickButton}
+            >
+                {open ? <ClearIcon/> : <MenuIcon/>}
+            </IconButton>
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClickItem}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                {keys.map((to: Route) => <MenuItem onClick={() => handleClickItem(to.toString())} key={to}>
+                    {to}
+                </MenuItem>)}
+            </Menu>
+        </>
     );
 };
 
