@@ -6,6 +6,7 @@ import { getTheme } from "./muiTheme";
 import { AppContent, AppWrapper } from "./components/common";
 import { HeaderComponent } from "./components/header";
 import PurityTest from "./pages/purityTest";
+import ScoreMeaning from "./pages/scoreMeaning";
 
 
 interface ChangePaletteMode {
@@ -40,6 +41,7 @@ function App() {
                     <AppContent>
                         <HeaderComponent/>
                         <PurityTest/>
+                        <ScoreMeaning/>
                     </AppContent>
                 </AppWrapper>
             </ThemeProvider>

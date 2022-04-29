@@ -1,9 +1,9 @@
-import { green, lightGreen, lime, orange } from "@mui/material/colors";
+import { green, lightGreen, lime, orange, red } from "@mui/material/colors";
 
 import { Localizations } from "./localizations";
 
 
-interface ScoreSettings {
+export interface ScoreSettings {
     color: string;
     textId: string;
 }
@@ -13,7 +13,7 @@ interface ScoreSettings {
  *  @param textId - the key of score text(public/locales/<language>/translation.json/purityTest/result)
  *  @param color - the font color of score value in result page
  **/
-const resultScores: {[key: number]: ScoreSettings} = {
+export const resultScores: {[key: number]: ScoreSettings} = {
     100: {
         textId: Localizations.Result100,
         color: green[500],
@@ -36,7 +36,7 @@ const resultScores: {[key: number]: ScoreSettings} = {
     },
     8: {
         textId: Localizations.Result8,
-        color: orange[800],
+        color: red[600],
     },
 };
 

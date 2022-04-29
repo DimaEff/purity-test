@@ -1,16 +1,22 @@
 import React from 'react';
-import { Paper } from "@mui/material";
-import { Element } from "react-scroll";
+import { useTranslation } from "react-i18next";
+import { Typography } from "@mui/material";
 
-import { routes } from "../consts/route";
+import { Localizations } from "../components/scoreMeaning/localizations";
+import ScoreMeaningContent from "../components/scoreMeaning";
+import { SectionWrapper } from "../components/common";
 
 
 const ScoreMeaning = () => {
+    const {t} = useTranslation();
+
     return (
-        <Paper sx={{height: 1200}}>
-            <Element name={routes.scoreMeaning}/>
-            score
-        </Paper>
+        <SectionWrapper title={t(Localizations.Title)} scrollName={"scoreMeaning"}>
+            <Typography variant={"h6"} fontWeight={"bold"} textAlign={"center"}>
+                {t(Localizations.Description)}
+            </Typography>
+            <ScoreMeaningContent />
+        </SectionWrapper>
     );
 };
 
