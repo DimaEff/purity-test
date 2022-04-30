@@ -13,7 +13,20 @@
     "seeMoreButton": "Узнать больше",
 
     "_comment_questions": "Все отображаемые вопросы",
-    "questions": [],
+    "questions": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
 
     "_comment_buttons": "Кнопки управления тестом",
     "navigationButtons": {

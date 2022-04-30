@@ -1,11 +1,12 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import faker from "@faker-js/faker";
 
 import Carousel, { CarouselProps } from "../../common/carousel";
 import QuestionsSection from "./questionsSection";
 import CarouselNavigation from "./carouselNavigation";
 import Result from "./result";
+import { Localizations } from "../localizations";
+import { useTranslation } from "react-i18next";
 
 
 const QUESTIONS_IN_PAGE = 10;
@@ -34,6 +35,8 @@ export const TestContext = React.createContext<TestContext>({
 });
 
 const TestQuestions = () => {
+    const {t} = useTranslation();
+
     const carouselSettings: CarouselProps = {
         allowSlidePrev: true,
         NavigationComponentBottom: CarouselNavigation,
@@ -44,9 +47,7 @@ const TestQuestions = () => {
     const [isEnd, setIsEnd] = useState(false);
     const [page, setPage] = useState(0);
     const [selectedCheckboxes, setSelectedCheckboxes] = useState<string[]>([]);
-    // const questions: string[] = t(Localizations.TestQuestions);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const questions: string[] = useMemo(() => faker.helpers.uniqueArray(() => faker.lorem.words(9), 100), []);
+    const questions: string[] = t(Localizations.TestQuestions, {returnObjects: true});
     const questionsCount = questions.length;
     const sectionsCont: null[] = new Array(Math.ceil(questionsCount / 10)).fill(null);
 

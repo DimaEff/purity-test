@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FaqQuestion } from "../components/faq/types";
 import { SectionWrapper } from "../components/common";
 import { useBreakpoints } from "../hooks";
+import { Localizations } from "../components/faq/localizations";
 
 
 const Faq = () => {
@@ -12,21 +13,21 @@ const Faq = () => {
     const {t} = useTranslation();
     const {isMobile} = useBreakpoints();
 
-    // const faqQuestions: FaqQuestion[] = t(Localizations.FaqQuestions);
-    const faqQuestions: FaqQuestion[] = [
-        {
-            title: "1231231231231 1d qd lkqmdcl akcmaks1",
-            description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-        },
-        {
-            title: "1231231231231 1d qd lkqmdcl akcmaks2",
-            description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-        },
-        {
-            title: "1231231231231 1d qd lkqmdcl akcmaks3",
-            description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-        },
-    ];
+    const faqQuestions: FaqQuestion[] = t(Localizations.FaqQuestions, {returnObjects: true});
+    // const faqQuestions: FaqQuestion[] = [
+    //     {
+    //         title: "1231231231231 1d qd lkqmdcl akcmaks1",
+    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
+    //     },
+    //     {
+    //         title: "1231231231231 1d qd lkqmdcl akcmaks2",
+    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
+    //     },
+    //     {
+    //         title: "1231231231231 1d qd lkqmdcl akcmaks3",
+    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
+    //     },
+    // ];
 
     return (
         <SectionWrapper scrollName={"faq"}>
