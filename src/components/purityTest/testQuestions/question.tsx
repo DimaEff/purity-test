@@ -83,7 +83,7 @@ const Question: React.FC<QuestionProps> = ({question, number}) => {
                     />
                 </Box>
             </ListItem>
-            <Divider/>
+            {number.toString()[1] === "0" || <Divider/>}
         </>
     );
 };

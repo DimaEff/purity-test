@@ -82,7 +82,7 @@ const TestQuestions = () => {
                 spacing={2}
                 sx={theme => ({
                     width: "100%",
-                    height: "80vh",
+                    height: "77vh",
                     margin: theme.spacing(1.5),
                 })}
             >

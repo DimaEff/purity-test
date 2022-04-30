@@ -35,7 +35,7 @@ const StartTest = () => {
             <Box
                 sx={{
                     position: "relative",
-                    bottom: isMobile ? "-10vh" : "-15vh",
+                    bottom: isMobile ? "-7vh" : "-15vh",
                     width: "100%",
                     display: "flex",
                     justifyContent: "center",
