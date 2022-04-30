@@ -40,11 +40,7 @@ function App() {
             <ThemeProvider theme={theme}>
                 <AppWrapper>
                     <AppContent>
-                        <Box
-                            sx={{
-                                height: "100vh",
-                            }}
-                        >
+                        <Box sx={{height: "100vh"}}>
                             <HeaderComponent/>
                             <PurityTest/>
                         </Box>
