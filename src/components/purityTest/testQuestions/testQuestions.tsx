@@ -105,7 +105,7 @@ const TestQuestions = () => {
                 </Box>
                 <Paper
                     sx={theme => ({
-                        height: "85%",
+                        maxHeight: "85%",
                         padding: theme.spacing(2, 1),
                     })}
                 >
