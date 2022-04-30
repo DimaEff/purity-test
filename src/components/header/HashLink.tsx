@@ -3,27 +3,21 @@ import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { Button, Typography } from "@mui/material";
 
-import { Route, routes } from "../../consts/route";
-import { Localizations } from "./localizations";
+import { routes } from "../../consts/route";
 
 
 type Variant = "button" | "link";
 
 interface HashLinkProps {
-    to: Route;
+    to: string;
     variant?: Variant;
 }
-
-const routesValues: any = {
-    faq: Localizations.HashRouteFaq,
-    scoreMeaning: Localizations.HashRouteScoreMeaning,
-};
 
 const HashLink: React.FC<HashLinkProps> = ({to, variant = "button"}) => {
     const {t} = useTranslation();
 
     const route = routes[to];
-    const routeName = useMemo(() => t(routesValues[to]), [t, to]);
+    const routeName = useMemo(() => t(routes[to]), [t, to]);
     const linkProps = {
         spy: true,
         smooth: true,

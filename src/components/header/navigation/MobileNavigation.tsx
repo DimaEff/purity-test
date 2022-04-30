@@ -2,27 +2,24 @@ import React from 'react';
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from '@mui/icons-material/Clear';
-import { scroller } from "react-scroll";
 import { useTranslation } from "react-i18next";
 
-import { Route, routes } from "../../../consts/route";
+import { scrollTo } from "../../../utils";
+import { routes } from "../../../consts/route";
 
 
 const MobileNavigation = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const keys = Object.keys(routes);
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+
     const handleClickButton = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClickItem = (to: string) => {
-        scroller.scrollTo(to, {
-            spy: true,
-            smooth: true,
-            duration: 500,
-        });
+        scrollTo(to);
         setAnchorEl(null);
     };
 
@@ -45,7 +42,7 @@ const MobileNavigation = () => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {keys.map((to: Route) => <MenuItem onClick={() => handleClickItem(to.toString())} key={to}>
+                {keys.map((to) => <MenuItem key={to.toString()} onClick={() => handleClickItem(to)}>
                     {t(routes[to])}
                 </MenuItem>)}
             </Menu>

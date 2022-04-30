@@ -1,13 +1,13 @@
 import React from 'react';
 import { Stack, SxProps, Typography, TypographyProps } from "@mui/material";
 import { Element } from "react-scroll";
-import { routes, Route } from "../../consts/route";
+import { routes, RouteName } from "../../consts/route";
 
 
 interface SectionWrapperProps {
     title?: React.ReactNode;
     wrapperSx?: SxProps;
-    scrollName?: Route;
+    scrollName?: RouteName;
 }
 
 const SectionWrapper: React.FC<SectionWrapperProps & TypographyProps> = (

@@ -1,4 +1,4 @@
-import { getLocaleName } from "../../utils";
+import { getLocaleName } from "../utils";
 
 const prefixes = ["hashRoutes"];
 

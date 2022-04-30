@@ -8,7 +8,7 @@ import { Localizations } from "../components/purityTest/localizations";
 
 
 const PurityTest = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <Carousel
