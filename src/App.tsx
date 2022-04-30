@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { PaletteMode, ThemeProvider, useTheme } from "@mui/material";
+import { Box, PaletteMode, ThemeProvider, useTheme } from "@mui/material";
 
 import "./index.css";
 import { getTheme } from "./muiTheme";
@@ -40,8 +40,14 @@ function App() {
             <ThemeProvider theme={theme}>
                 <AppWrapper>
                     <AppContent>
-                        <HeaderComponent/>
-                        <PurityTest/>
+                        <Box
+                            sx={{
+                                height: "100vh",
+                            }}
+                        >
+                            <HeaderComponent/>
+                            <PurityTest/>
+                        </Box>
                         <ScoreMeaning/>
                         <Faq />
                     </AppContent>

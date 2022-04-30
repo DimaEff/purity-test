@@ -15,12 +15,11 @@ const PurityTest = () => {
             allowSlidePrev={false}
             allowTouchMove={false}
             speed={500}
-            height={"110vh"}
             navigation={false}
         >
             <SectionWrapper
                 wrapperSx={{
-                    height: "80vh",
+                    maxHeight: "80%",
                     display: "flex",
                     justifyContent: "center",
                 }}
