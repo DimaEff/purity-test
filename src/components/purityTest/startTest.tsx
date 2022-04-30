@@ -1,17 +1,18 @@
 import React from 'react';
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import { useSwiper } from "swiper/react";
 import { useTranslation } from "react-i18next";
 
-import { scrollTo } from "../../utils";
 import { Localizations } from "./localizations";
+import SeeMore from "./seeMore";
+import { useBreakpoints } from "../../hooks";
 
 
 const StartTest = () => {
     const {t} = useTranslation();
     const swiper = useSwiper();
+    const { isMobile } =useBreakpoints();
 
     return (
         <Box>
@@ -33,34 +34,14 @@ const StartTest = () => {
             </Box>
             <Box
                 sx={{
-                    position: "fixed",
-                    left: 0,
-                    bottom: 250,
+                    position: "relative",
+                    bottom: isMobile ? "-10vh" : "-15vh",
                     width: "100%",
                     display: "flex",
                     justifyContent: "center",
                 }}
             >
-                <Stack
-                    spacing={1}
-                    sx={{
-                        textAlign: "center",
-                        cursor: "pointer",
-                    }}
-                    onClick={() => scrollTo("scoreMeaning")}
-                >
-                    <Typography variant={"h6"} fontWeight={"bold"}>
-                        See more
-                    </Typography>
-                    <Typography>
-                        <ArrowBackIosRoundedIcon
-                            sx={{
-                                transform: "rotate(-90deg)",
-                                fontSize: 32,
-                            }}
-                        />
-                    </Typography>
-                </Stack>
+                <SeeMore/>
             </Box>
         </Box>
     );

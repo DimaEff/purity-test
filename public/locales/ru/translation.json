@@ -9,7 +9,8 @@
   "purityTest": {
     "title": "Rice Purity Test",
     "description": "This rice purity test will let you know how pure you are. The test consists of 100 questions and the more your positive answers, the lower your purity score. Take the test now to find out your score!",
-    "startTestButton": "Start test",
+    "startTestButton": "Начать тест",
+    "seeMoreButton": "Узнать больше",
 
     "_comment_questions": "Все отображаемые вопросы",
     "questions": [],

@@ -8,6 +8,7 @@ export const Localizations = {
     Title: getLocaleName([...purityTestPrefixes, "title"]),
     Description: getLocaleName([...purityTestPrefixes, "description"]),
     StartTestButton: getLocaleName([...purityTestPrefixes, "startTestButton"]),
+    SeMoreButton: getLocaleName([...purityTestPrefixes, "seeMoreButton"]),
 
     TestQuestions: getLocaleName([...purityTestPrefixes, "questions"]),
     ResultNavigationButton: getLocaleName([...navigationButtons, "result"]),
