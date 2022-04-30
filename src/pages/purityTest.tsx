@@ -19,7 +19,7 @@ const PurityTest = () => {
         >
             <SectionWrapper
                 wrapperSx={{
-                    maxHeight: "85%",
+                    maxHeight: "80%",
                     display: "flex",
                     justifyContent: "center",
                 }}
