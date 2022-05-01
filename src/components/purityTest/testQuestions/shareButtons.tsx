@@ -2,15 +2,14 @@ import React, { useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
 import {
+    FacebookShareButton,
     PinterestShareButton,
     RedditShareButton,
     TwitterShareButton,
-    VKShareButton,
     WhatsappShareButton,
 } from "react-share";
 import { Stack, SxProps, Theme } from "@mui/material";
-import { Pinterest, Reddit, Twitter, WhatsApp } from '@mui/icons-material';
-import VK from "../../../assets/icons8-вконтакте.svg";
+import { Facebook, Pinterest, Reddit, Twitter, WhatsApp } from '@mui/icons-material';
 import { Localizations } from "../localizations";
 
 
@@ -37,6 +36,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({score}) => {
 
     return (
         <Stack direction={"row"} spacing={2}>
+            {/*<a target={"_blank"} href={`http://pinterest.com/pin/create/button/?url=http://localhost:3000&media=${img}`}>p</a>*/}
             <PinterestShareButton
                 {...commonShareProps}
                 windowWidth={1000}
@@ -48,16 +48,18 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({score}) => {
             <TwitterShareButton {...commonShareProps}>
                 <Twitter sx={{color: "#1DA1F2", ...commonIconProps}}/>
             </TwitterShareButton>
-            <VKShareButton {...commonShareProps}>
-                <img src={VK} alt={"VKicon"}/>
-            </VKShareButton>
+            <FacebookShareButton {...commonShareProps}>
+                <Facebook sx={{color: "#4867AA", ...commonIconProps}}/>
+            </FacebookShareButton>
+            {/*<VKShareButton {...commonShareProps}>*/}
+            {/*    <img src={VK} alt={"VKicon"}/>*/}
+            {/*</VKShareButton>*/}
             <WhatsappShareButton {...commonShareProps}>
                 <WhatsApp sx={{color: "#39D855", ...commonIconProps}}/>
             </WhatsappShareButton>
             <RedditShareButton {...commonShareProps}>
                 <Reddit sx={{color: "#F8450C", ...commonIconProps}}/>
             </RedditShareButton>
-            {/*<a target={"_blank"} href={`http://pinterest.com/pin/create/button/?url=http://localhost:3000&media=${img}`}>p</a>*/}
         </Stack>
     );
 };
