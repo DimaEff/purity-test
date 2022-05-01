@@ -37,9 +37,9 @@ const Result = () => {
                 // overflowY: "auto",
             }}
         >
-            {/*<Typography textAlign={"center"} fontWeight={"bold"} variant={"h4"}>*/}
-            {/*    Your Purity Score is*/}
-            {/*</Typography>*/}
+            <Typography textAlign={"center"} fontWeight={"bold"} variant={"h4"}>
+                {t(Localizations.ResultTitle)}
+            </Typography>
             <Typography
                 fontWeight={"bold"}
                 variant={"h2"}

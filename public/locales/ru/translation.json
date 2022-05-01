@@ -1,18 +1,18 @@
 {
-  "_comment_routes": "Эти значения соответствуют ссылкам в хэдере",
+  "_routes": "Эти значения соответствуют ссылкам в хэдере",
   "hashRoutes": {
     "faq": "FAQ",
     "scoreMeaning": "РЕЗУЛЬТАТЫ"
   },
 
-  "_comment_test": "Все, что связано непосредственно с тестом",
+  "_test": "Все, что связано непосредственно с тестом",
   "purityTest": {
     "title": "Rice Purity Test",
     "description": "This rice purity test will let you know how pure you are. The test consists of 100 questions and the more your positive answers, the lower your purity score. Take the test now to find out your score!",
     "startTestButton": "Начать тест",
     "seeMoreButton": "Узнать больше",
 
-    "_comment_questions": "Все отображаемые вопросы",
+    "_questions": "Все отображаемые вопросы. Должны быть уникальными.",
     "questions": [
       "1",
       "2",
@@ -28,29 +28,27 @@
       "12"
     ],
 
-    "_comment_buttons": "Кнопки управления тестом",
+    "_buttons": "Кнопки управления тестом",
     "navigationButtons": {
-      "result": "РЕЗУЛЬТАТ",
-      "tryAgain": "Try again"
+      "result": "РЕЗУЛЬТАТ"
     },
 
-    "_comment_share": "Все, что связано с возможностью поделиться прохождением теста",
-    "share": {
+    "_result": "Карточка отображения результата прохождения теста.",
+    "result": {
+      "title": "Your Purity Score is",
+      "tryAgainButton": "Try again",
 
-      "_comment_share_text": "Текст, который отображется при нажатии на кнопку поделиться; {{score}} - результат прохождения теста",
-      "title": "My purity score is {{score}}!",
-
-      "_comment_share_гкд": "Ссылка на сайт",
-      "url": ""
+      "_share_text": "Текст, который отображется при нажатии на кнопку поделиться; {{score}} - результат прохождения теста",
+      "scoreDescription": "My purity score is {{score}}!"
     }
   },
 
-  "_comment_score_meaning": "Все, что связано с меню 'Score meaning'",
+  "_score_meaning": "Все, что связано с меню 'Score meaning'",
   "scoreMeaning": {
     "title": "Rice purity test score meaning",
     "description": "The test is meant to determine an individual's purity and ethics. However, you have to note that one individual's score on the test could be good enough for them but bad for other individuals. Keep in mind that 100 is the best Rice Purity test score while 0 is the worst.",
 
-    "_comment_result_texts": "Тексты, которые отображаются при различном результате + те, что во меню 'Score meaning'. Ключ - верхний предел 'Score meaning' на https://purity-test.com/",
+    "_result_texts": "Тексты, которые отображаются при различном результате + те, что во меню 'Score meaning'. Ключ - верхний предел 'Score meaning' на https://purity-test.com/",
     "100": "Individuals that score 98 to 100 are considered to have a great kind of personality, and they are considered relatively pure. However, it's rare to find individuals that'll score a solid 100.",
     "97": "Individuals that score 94 to 97 are probably very pure. However, they may have done a few innocent things like kissing or holding hands with other people that aren't family members.",
     "93": "People that score between 93 and 77 are relatively pure. They could have made a few morally questionable decisions; however, they haven't necessarily lost their moral compass.",
@@ -59,7 +57,7 @@
     "8": "Individuals in this category are super hardcore, having done almost all activities mentioned in the survey, including hard drugs and jail time."
   },
 
-  "_comment_faq": "Все, что связано с FAQ + добавление вопросов",
+  "_faq": "Все, что связано с FAQ + добавление вопросов",
   "faq": [
     {
       "title": "What is the rice purity test?",

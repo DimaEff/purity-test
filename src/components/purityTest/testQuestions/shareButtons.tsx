@@ -17,7 +17,7 @@ import { Localizations } from "../localizations";
 
 const getCommonShareProps = (url: string, score: number, t: TFunction) => ({
     url: url,
-    title: t(Localizations.ShareTitle, {score}),
+    title: t(Localizations.ScoreDescription, {score}),
 })
 const commonIconProps: SxProps<Theme> = {
     fontSize: 32,
