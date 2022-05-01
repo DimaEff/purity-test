@@ -9,36 +9,21 @@ import { Localizations } from "../components/faq/localizations";
 
 
 const Faq = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {t} = useTranslation();
     const {isMobile} = useBreakpoints();
 
     const faqQuestions: FaqQuestion[] = t(Localizations.FaqQuestions, {returnObjects: true});
-    // const faqQuestions: FaqQuestion[] = [
-    //     {
-    //         title: "1231231231231 1d qd lkqmdcl akcmaks1",
-    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-    //     },
-    //     {
-    //         title: "1231231231231 1d qd lkqmdcl akcmaks2",
-    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-    //     },
-    //     {
-    //         title: "1231231231231 1d qd lkqmdcl akcmaks3",
-    //         description: "akcjasclkm alwd malscl malwkdmlawkmd as aw dasc awwcawcmalscl malwkdmlawkmd as aw dasc awwcawc",
-    //     },
-    // ];
 
     return (
         <SectionWrapper scrollName={"faq"}>
-            {faqQuestions.map(({title, description}, i) => <>
+            {faqQuestions.map(({title, description}, i) => <React.Fragment key={title}>
                     <SectionWrapper title={title}>
                         <Typography textAlign={"center"} fontWeight={isMobile ? "normal" : "bold"}>
                             {description}
                         </Typography>
                     </SectionWrapper>
                     {faqQuestions.length === i + 1 || <Divider/>}
-                </>
+                </React.Fragment>
             )}
         </SectionWrapper>
     );

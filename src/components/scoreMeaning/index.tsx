@@ -12,6 +12,7 @@ const ScoreMeaning = () => {
                 {
                     Object.keys(resultScores).reverse()
                         .map((value, index, array) => <ScoreMeaningItem
+                                key={value}
                                 scoreMeaningUpperLimit={value}
                                 scoreMeaningDownLimit={array[index + 1] || "0"}
                                 scoreMeaningSettings={resultScores[+value]}

@@ -33,8 +33,9 @@ const Result = () => {
                 justifyContent: "center",
                 flexFlow: "column",
                 width: "100%",
-                height: "100%",
-                // overflowY: "auto",
+                // height: "90%",
+                padding: 4,
+                overflowY: "auto",
             }}
         >
             <Typography textAlign={"center"} fontWeight={"bold"} variant={"h4"}>
