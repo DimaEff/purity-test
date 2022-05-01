@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useSwiper } from "swiper/react";
 import { Button, colors, SxProps, Theme, Typography, useTheme } from "@mui/material";
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
@@ -8,12 +7,13 @@ import { useTranslation } from "react-i18next";
 import { TestContext } from "./testQuestions";
 import ButtonStack from "../../common/ButtonStack";
 import { Localizations } from "../localizations";
+import { NavigationProps } from "../../common/carousel";
 
 
-const CarouselNavigation = () => {
+const CarouselNavigation: React.FC<NavigationProps> = ({swiper}) => {
     const { t } = useTranslation();
 
-    const swiper = useSwiper();
+    // const swiper = useSwiper();
     const theme = useTheme();
     const {isEnd, setIsEnd} = useContext(TestContext);
 

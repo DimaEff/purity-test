@@ -42,6 +42,10 @@ const TestQuestions = () => {
         NavigationComponentBottom: CarouselNavigation,
         onSlideChange: swiper => setPage(swiper.activeIndex),
         allowTouchMove: false,
+        withNavigation: true,
+        sxSlide: {
+            overflowY: "auto",
+        }
     };
 
     const [isEnd, setIsEnd] = useState(false);

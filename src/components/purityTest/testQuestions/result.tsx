@@ -34,11 +34,12 @@ const Result = () => {
                 flexFlow: "column",
                 width: "100%",
                 height: "100%",
+                // overflowY: "auto",
             }}
         >
-            <Typography textAlign={"center"} fontWeight={"bold"} variant={"h4"}>
-                Your Purity Score is
-            </Typography>
+            {/*<Typography textAlign={"center"} fontWeight={"bold"} variant={"h4"}>*/}
+            {/*    Your Purity Score is*/}
+            {/*</Typography>*/}
             <Typography
                 fontWeight={"bold"}
                 variant={"h2"}

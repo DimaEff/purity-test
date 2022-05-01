@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Box, SxProps } from "@mui/material";
+import SwiperRef from "swiper";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import 'swiper/css';
+import CarouselNavigation from "../../purityTest/testQuestions/carouselNavigation";
 
+
+export interface NavigationProps {
+    swiper: SwiperRef;
+}
 
 interface CarouselNativeProps {
     width?: string | number;
     height?: string | number;
     sxWrapper?: SxProps;
     sxSlide?: SxProps;
-    NavigationComponentTop?: React.FC;
-    NavigationComponentBottom?: React.FC;
+    NavigationComponentTop?: React.FC<NavigationProps>;
+    NavigationComponentBottom?: React.FC<NavigationProps>;
+    withNavigation?: boolean;
 }
 
 export type CarouselProps = CarouselNativeProps & Omit<SwiperProps, "height">;
@@ -24,15 +31,21 @@ const Carousel: React.FC<CarouselProps> = (
         sxSlide,
         NavigationComponentTop,
         NavigationComponentBottom,
+        withNavigation,
         ...props
     }
 ) => {
     const childrenArray = React.Children.toArray(children);
+    const [swiper, setSwiper] = useState<SwiperRef | null>(null);
+
+    const navigation = useMemo(() => (withNavigation && swiper) ?
+        <CarouselNavigation swiper={swiper}/> : null, [swiper, withNavigation]);
 
     return (
         <Box
             sx={{
                 display: "flex",
+                flexFlow: "column",
                 width: width || "100%",
                 height: height || "100%",
                 ...sxWrapper
@@ -44,10 +57,8 @@ const Carousel: React.FC<CarouselProps> = (
                     height: "100%",
                 }}
                 {...props}
+                onInit={setSwiper}
             >
-                <Box>
-                    {NavigationComponentTop && <NavigationComponentTop />}
-                </Box>
                 {
                     childrenArray.map(((child, i) => <SwiperSlide key={i}>
                             <Box
@@ -63,10 +74,8 @@ const Carousel: React.FC<CarouselProps> = (
                         </SwiperSlide>
                     ))
                 }
-                <Box sx={{zIndex: 100, position: "absolute", bottom: 0, width: "100%"}}>
-                    {NavigationComponentBottom && <NavigationComponentBottom />}
-                </Box>
             </Swiper>
+            {navigation}
         </Box>
     );
 };
