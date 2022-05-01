@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from "@mui/material";
 
 // import logo from "../../assets/purity-logo.svg";
-import { BACKGROUND_COLOR_DARK, BACKGROUND_COLOR_LIGHT } from "../../consts/theme";
+import { BACKGROUND_COLOR_DARK, BACKGROUND_COLOR_LIGHT } from "../../_forChanges/theme";
 
 
 const Loader = () => {

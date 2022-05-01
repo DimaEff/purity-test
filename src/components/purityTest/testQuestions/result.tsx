@@ -3,7 +3,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { useSwiper } from "swiper/react";
 import { useTranslation } from "react-i18next";
 
-import { QUESTIONS_COUNT } from "../../../consts/app";
+import { QUESTIONS_COUNT } from "../../../_forChanges/app";
 import { TestContext } from "./testQuestions";
 import ShareButtons from "./shareButtons";
 import { getNeededScoreResult } from "../../scoreMeaning/utils";

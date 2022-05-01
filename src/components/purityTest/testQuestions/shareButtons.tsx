@@ -10,11 +10,10 @@ import {
 } from "react-share";
 import { Stack, SxProps, Theme } from "@mui/material";
 import { Facebook, Pinterest, Reddit, Twitter, WhatsApp } from '@mui/icons-material';
+
+import { IMAGE_FOR_PINTEREST_URL } from "../../../_forChanges/app";
 import { Localizations } from "../localizations";
 
-
-// const img = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iphon.fr%2Fpost%2Fgrace-a-ios-14-laudience-de-pinterest-explose&psig=AOvVaw1APUSqcrm6oOz2BWsr2j0-&ust=1651470254599000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLCqhqLMvfcCFQAAAAAdAAAAABAJ"
-const img = `https://purity-test.com/assets/images/purity-test.png`;
 
 const getCommonShareProps = (url: string, score: number, t: TFunction) => ({
     url: url,
@@ -41,7 +40,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({score}) => {
                 {...commonShareProps}
                 windowWidth={1000}
                 windowHeight={730}
-                media={img}
+                media={IMAGE_FOR_PINTEREST_URL}
             >
                 <Pinterest sx={{color: "#DF0022", ...commonIconProps}}/>
             </PinterestShareButton>

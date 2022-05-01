@@ -1,6 +1,5 @@
-import { green, lightGreen, lime, orange, red } from "@mui/material/colors";
-
 import { Localizations } from "./localizations";
+import { SM_100, SM_44, SM_76, SM_8, SM_93, SM_97 } from "../../_forChanges/theme";
 
 
 export interface ScoreSettings {
@@ -16,27 +15,27 @@ export interface ScoreSettings {
 export const resultScores: {[key: number]: ScoreSettings} = {
     100: {
         textId: Localizations.Result100,
-        color: green[500],
+        color: SM_100,
     },
     97: {
         textId: Localizations.Result97,
-        color: lightGreen[500],
+        color: SM_97,
     },
     93: {
         textId: Localizations.Result93,
-        color: lime[500],
+        color: SM_93,
     },
     76: {
         textId: Localizations.Result76,
-        color: orange[500],
+        color: SM_76,
     },
     44: {
         textId: Localizations.Result44,
-        color: orange[900],
+        color: SM_44,
     },
     8: {
         textId: Localizations.Result8,
-        color: red[600],
+        color: SM_8,
     },
 };
 

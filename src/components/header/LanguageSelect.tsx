@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuItem, Select } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-import { languages } from "../../consts/languages";
+import { languages } from "../../_forChanges/languages";
 
 
 const LanguageSelect = () => {

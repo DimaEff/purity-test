@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Stack } from "@mui/material";
 
-import { BACKGROUND_COLOR_DARK, BACKGROUND_COLOR_LIGHT } from "../../consts/theme";
+import { BACKGROUND_COLOR_DARK, BACKGROUND_COLOR_LIGHT } from "../../_forChanges/theme";
 
 
 const AppWrapper: React.FC = ({children}) => {

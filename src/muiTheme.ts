@@ -1,17 +1,25 @@
+import { createTheme, PaletteMode, Theme } from "@mui/material";
 
-import { colors, createTheme, PaletteMode, Theme } from "@mui/material";
-
-import { BORDER_RADIUS1, BORDER_RADIUS2,  } from "./consts/theme";
+import {
+    BORDER_RADIUS1,
+    BORDER_RADIUS2,
+    BUTTON_PRIMARY_ACTIVE,
+    BUTTON_PRIMARY_DARK,
+    BUTTON_PRIMARY_LIGHT,
+    BUTTON_SUCCESS,
+    TEXT_COLOUR_DARK,
+    TEXT_COLOUR_LIGHT,
+} from "./_forChanges/theme";
 
 export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
     palette: {
         mode,
         primary: {
-            main: mode === "light" ? colors.blue[500]: colors.blue[700],
-            dark: colors.blue[800],
+            main: mode === "light" ? BUTTON_PRIMARY_LIGHT : BUTTON_PRIMARY_DARK,
+            dark: BUTTON_PRIMARY_ACTIVE,
         },
         success: {
-            main: "#53c318",
+            main: BUTTON_SUCCESS,
         },
     },
     typography: {
@@ -20,7 +28,7 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
             "sans-serif",
         ].join(","),
         allVariants: {
-            color: mode === "light" ? theme.palette.text.primary : colors.grey[400],
+            color: mode === "light" ? TEXT_COLOUR_LIGHT : TEXT_COLOUR_DARK,
         },
     },
     components: {
@@ -32,7 +40,6 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
                 root: {
                     borderRadius: BORDER_RADIUS2,
                     padding: theme.spacing(2),
-                    // maxWidth: "100vh",
                 },
             },
         },
@@ -55,9 +62,6 @@ export const getTheme = (mode: PaletteMode, theme: Theme) => createTheme({
                     minWidth: theme.spacing(0),
                     textTransform: "none",
                     minHeight: theme.spacing(5),
-                },
-                containedPrimary: {
-                    backgroundColor: theme.palette.mode === "dark" ? colors.blue[800] : theme.palette.primary.main,
                 },
                 outlined: {
                     padding: theme.spacing(1),
