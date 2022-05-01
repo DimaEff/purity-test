@@ -1,12 +1,12 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Box, Paper, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import Carousel, { CarouselProps } from "../../common/carousel";
 import QuestionsSection from "./questionsSection";
 import CarouselNavigation from "./carouselNavigation";
 import Result from "./result";
 import { Localizations } from "../localizations";
-import { useTranslation } from "react-i18next";
 
 
 const QUESTIONS_IN_PAGE = 10;
@@ -44,6 +44,7 @@ const TestQuestions = () => {
         allowTouchMove: false,
         withNavigation: true,
         sxSlide: {
+            height: "110%",
             overflowY: "auto",
         }
     };
@@ -51,6 +52,7 @@ const TestQuestions = () => {
     const [isEnd, setIsEnd] = useState(false);
     const [page, setPage] = useState(0);
     const [selectedCheckboxes, setSelectedCheckboxes] = useState<string[]>([]);
+
     const questions: string[] = t(Localizations.TestQuestions, {returnObjects: true});
     const questionsCount = questions.length;
     const sectionsCont: null[] = new Array(Math.ceil(questionsCount / 10)).fill(null);
